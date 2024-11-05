@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Website</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Menu links -->
+    <header>
+        <a href="#" class="logo">Chau Truong</a>
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="#research" class="active">Research</a>
+            <a href="#animations" class="active">Animations</a>
+            <a href="https://drive.google.com/file/d/1fGaKmu4YyAgVfkQD1RaPk-Rs3FuA8NiD/view?usp=sharing" class="active" target="_blank">CV</a>
+            <a href="https://github.com/chautruo15" class="active" target="_blank">GitHub</a>
+        </nav>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            ☰
+        </div>
+    </header>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1050) {
+                nav.classList.remove('active'); // Remove 'active' class if screen width exceeds 1050px
+            }
+        });
+    </script>
+
+    <!-- About me -->
+    <section id="home" class="home">
+        <div class="home-img">
+            <img src="faceboard.jpg" alt="" style="width: 400px; height: auto;">
+        </div>
+        <div class="home-content">
+            <h1>Hi! I'm <span>Chau</span></h1>
+            <h3 class="typing-text">I'm a senior at Princeton University studying <span>Physics</span></h3>
+            <!-- <p>
+                About me text
+            </p> -->
+            <p class="email"><b>Email:</b> <a href="mailto:ct8810@princeton.edu" style="color: #97d2e5">ct8810@princeton.edu</a></p>
+        </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research" class="research">
+        <h2>Research</h2>
+        <p>
+            Throughout my time as an undergrad, I have engaged in various 
+            research projects within the Department of Physics at Princeton University.
+        </p>
+
+        <p>
+            As a summer intern at the Princeton Gravity Initiative from June to July 2023, 
+            I worked under Dr. Delilah Gates and studied X-ray reflection spectroscopy, 
+            a technique used to measure the spin of a black hole (BH) that involves 
+            simulating and observing the Fe-K&alpha; line emission from the BH’s accretion disk. 
+            My project focused on modeling these broadened emission spectra using the open-source 
+            code Adaptive Analytical Ray Tracing (AART). AART simulates high-resolution images 
+            of BH accretion disks, calculating the disk radius from which observed photons 
+            were emitted and the redshift factor of the photons at each pixel on the image. 
+            Using these values obtained from AART, I implemented code to calculate the resulting 
+            emission spectrum for a given set of disk parameters, such as the BH spin and the 
+            inclination angle of the observer. To decrease the runtime when computing the spectra, 
+            I also helped to alter AART to create a polar grid rather than a Cartesian grid 
+            when simulating images. This research was extended into my Junior Fall Independent Work, 
+            where I modeled spectra for the accretion disk model of sub-Keplerian flow, in which the angular 
+            momentum from the standard model of circular Keplerian flow is rescaled. 
+        </p>
+
+        <p>
+            For my Junior Spring Independent Work, I worked under Professor Adam Burrows 
+            from the Department of Astrophysical Sciences to study the long-term stability 
+            and evolution of compact multi-planet systems. Using REBOUND, an open-source N-body code, 
+            I simulated the evolution of various planetary systems, modeling the time to instability 
+            as a function of the initial orbital separation between planets. Additionally, I examined 
+            the semi-major axes and orbital eccentricities of the planets to identify ejections and uncover 
+            trends that might predict when and how these ejections occur.
+        </p>
+
+        <p>
+            During the summer of 2024, under the guidance of Dr. Alejandro Cárdenas-Avendaño at the 
+            Princeton Gravity Initiative, I developed code in Julia to calculate the inspiral orbit 
+            and gravitational waveforms of extreme mass ratio inspiral (EMRI) systems using the numerical 
+            kludge method. Beginning with code to integrate the geodesic equations, I expanded it to 
+            incorporate radiation force calculations, allowing me to model the inspiral. I then extended 
+            the code to compute the gravitational waveform and produce its “audio,” ultimately creating 
+            animations of the inspiral orbits with the sonified waveforms. 
+            <a href="#animations" class="active" style="color: #97d2e5">Below</a> are examples of the 
+            animations I produced.
+        </p>
+
+        <p> 
+            For my Senior Thesis, I am collaborating with Professor James Stone at the Institute for 
+            Advanced Study and Hengrui Zhu at the Princeton Gravity Initiative to implement 
+            algorithmic improvements to the moving-puncture approach for binary black hole (BBH) 
+            simulations within the AthenaK framework, a modern implementation of Athena++. 
+            The project focuses on enhancing the slow-start lapse technique to improve the 
+            accuracy and stability of BBH simulations.
+        </p>
+
+        <!-- JP links -->
+        <p>Links to my Junior Papers are provided below.</p>
+        <div class="jp-pdfs">
+            <a href="https://drive.google.com/file/d/1q_t_LIb596J8DBwObp--8I-R_XLjMlJ0/view?usp=sharing" style="color: #97d2e5" target="_blank">Junior Paper (Fall 2023)</a>
+            <a href="https://drive.google.com/file/d/1q_t_LIb596J8DBwObp--8I-R_XLjMlJ0/view?usp=sharing" style="color: #97d2e5" target="_blank">Junior Paper (Spring 2024)</a>
+        </div>
+    </section>
+
+    <!-- Animations -->
+    <section id="animations" class="animations">
+        <h2>Animations</h2>
+        <p>
+            The following animations showcase the inspiral orbits and 
+            gravitational waveforms of EMRI systems that I produced during 
+            my summer research at the Princeton Gravity Initiative from June 
+            to July 2024. In developing these, I implemented the numerical 
+            kludge method to simulate the inspiral and calculate the waveform, 
+            which I then sonified to reflect the frequency evolution over time. 
+            These animations combine a visual representation of the orbit and 
+            the corresponding sound, offering an engaging perspective on the 
+            dynamics of EMRI systems.
+        </p>
+    
+        <!-- MP4s -->
+        <div class="video-container">
+            <video controls>
+                <source src="./geodesics-two-panel.mp4" type="video/mp4">
+            </video>
+            <p>
+                This animation illustrates an example of a geodesic path, 
+                representing the trajectory of a test particle orbiting a 
+                10<sup>6</sup> M<sub>&#x2609;</sub> supermassive black hole 
+                (SMBH) without any external forces.
+            </p>
+        </div>
+    
+        <div class="video-container">
+            <video controls>
+                <source src="./inspiral-two-panel.mp4" type="video/mp4">
+            </video>
+            <p>
+                This animation shows the inspiral orbit of an EMRI system with 
+                a mass ratio of 1:100 and a SMBH spin of 30%, after taking into 
+                account the effects of radiation reaction.
+            </p>
+        </div>
+    
+        <div class="video-container">
+            <video controls>
+                <source src="./inspiral-waveform-animation-sound-e0.0-p20.0-iota1.57-v2.mp4" type="video/mp4">
+            </video>
+            <p>
+                This animation depicts the inspiral orbit and waveform of an 
+                EMRI system with a mass ratio of 1:100 and a SMBH spin of 30% 
+                with orbital parameters eccentricity <i>e = 0.0</i>, semilatus <i>p = 20.0</i>, 
+                and inclination angle <i>&iota; = &pi; / 2</i>, accompanied by sound that 
+                reflects the waveform’s frequency evolution.
+            </p>
+        </div>
+    
+        <div class="video-container">
+            <video controls>
+                <source src="./inspiral-waveform-animation-sound-e0.7-p5.0-iota1.57-v2.mp4" type="video/mp4">
+            </video>
+            <p>
+                This animation depicts the inspiral orbit and waveform of an 
+                EMRI system with a mass ratio of 1:100 and a SMBH spin of 30% 
+                with orbital parameters <i>e = 0.7</i>, <i>p = 5.0</i>, and 
+                <i>&iota; = &pi; / 2</i>, accompanied by sound that reflects the 
+                waveform’s frequency evolution. Due to the more eccentric 
+                orbit of this system, the waveform shows sharp pulses at 
+                each pericenter passage, producing a distinct “spiking” 
+                effect in the audio.
+            </p>
+        </div>
+    </section>    
+
+</body>
+
+</html>
