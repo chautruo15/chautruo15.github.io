@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Chau Truong — Home</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Menu links -->
+    <header>
+        <a href="home.html" class="logo">Chau Truong</a>
+        <nav>
+            <a href="home.html" class="active">Home</a>
+            <a href="research.html" class="active">Research</a>
+            <a href="animations.html" class="active">Animations</a>
+            <a href="ChauTruong—CV.pdf" class="active" target="_blank">CV</a>
+            <a href="https://github.com/chautruo15" class="active" target="_blank">GitHub</a>
+        </nav>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            ☰
+        </div>
+    </header>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1050) {
+                nav.classList.remove('active'); // Remove 'active' class if screen width exceeds 1050px
+            }
+        });
+    </script>
+
+    <!-- Research -->
+    <section id="research" class="research">
+
+        <h2>Research</h2>
+
+        <p>
+            My current project focuses on nonlinear wave dynamics and turbulence as a model 
+            for gravitational wave behavior. I am numerically evolving nonlinear wave equations 
+            on spacetime geometries that allow regions of stably trapped null geodesics (light rays),   
+            varying both the geometry and the type of nonlinearity. By doing so, I aim to 
+            disentangle their individual effects on the resulting dynamics.
+        </p>
+
+        <p>
+            -----
+        </p>
+
+        <p>
+            Throughout my time as an undergraduate student, I engaged in various 
+            research projects within the Department of Physics at Princeton University.
+        </p>
+
+        <p> 
+            For my 
+            <a href="ChauTruong—SeniorThesis.pdf" style="color: #64B5F6" target="_blank">Senior Thesis</a>, 
+            I collaborated with Professor James Stone at the Institute for 
+            Advanced Study and Hengrui Zhu at the Princeton Gravity Initiative to implement 
+            algorithmic improvements to the moving-puncture approach for binary black hole (BBH) 
+            simulations within the AthenaK framework, a modern implementation of Athena++. 
+            The project focused on enhancing the slow-start lapse technique to improve the 
+            accuracy and stability of BBH simulations. A paper is currently in preparation.
+        </p>
+
+        <p>
+            During the summer of 2024, under the guidance of Dr. Alejandro Cárdenas-Avendaño at the 
+            Princeton Gravity Initiative (PGI), I developed 
+            <a href="https://github.com/chautruo15/emri-waveform" class="active" style="color: #64B5F6" target="_blank">code</a> 
+            in Julia to calculate the inspiral orbit 
+            and gravitational waveforms of extreme mass ratio inspiral (EMRI) systems using the numerical 
+            kludge method. Beginning with code to integrate the geodesic equations, I expanded it to 
+            incorporate radiation force calculations, allowing me to model the inspiral. I then extended 
+            the code to compute the gravitational waveform and produce its “audio,” ultimately creating 
+            animations of the inspiral orbits with the sonified waveforms. 
+            <a href="animations.html" class="active" style="color: #64B5F6">Here</a> are examples of the 
+            animations I produced.
+        </p>
+
+        <p>
+            As a summer intern at the PGI from June to July 2023, 
+            I worked under Dr. Delilah Gates and studied X-ray reflection spectroscopy, 
+            a technique used to measure the spin of a black hole (BH) that involves 
+            simulating and observing the Fe-K&alpha; line emission from the BH’s accretion disk. 
+            My project focused on modeling these broadened emission spectra using the open-source 
+            code Adaptive Analytical Ray Tracing 
+            (<a href="https://github.com/iAART/aart" class="active" style="color: #64B5F6" target="_blank">AART</a>). 
+            AART simulates high-resolution images of BH accretion disks, calculating the disk radius from 
+            which observed photons were emitted and the redshift factor of the photons at each pixel on the image. 
+            Using these values obtained from AART, I implemented code to calculate the resulting 
+            emission spectrum for a given set of disk parameters, such as the BH spin and the 
+            inclination angle of the observer. To decrease the runtime when computing the spectra, 
+            I also helped to alter AART to create a polar grid rather than a Cartesian grid 
+            when simulating images. This research was extended into my 
+            <a href="ChauTruong—FallJP.pdf" style="color: #64B5F6" target="_blank">Junior Fall Independent Work</a>,  
+            where I modeled spectra for the accretion disk model of sub-Keplerian flow, in which the angular 
+            momentum from the standard model of circular Keplerian flow is rescaled. 
+            I am a co-author of the 
+            <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.111.124004" style="color: #64B5F6" target="_blank">paper</a> 
+            presenting our findings.
+        </p>
+
+        <p>
+            For my 
+            <a href="ChauTruong—SpringJP.pdf" style="color: #64B5F6" target="_blank">Junior Spring Independent Work</a>, 
+            I worked under Professor Adam Burrows 
+            from the Department of Astrophysical Sciences to study the long-term stability 
+            and evolution of compact multi-planet systems. Using REBOUND, an open-source N-body code, 
+            I simulated the evolution of various planetary systems, modeling the time to instability 
+            as a function of the initial orbital separation between planets. Additionally, I examined 
+            the semi-major axes and orbital eccentricities of the planets to identify ejections and uncover 
+            trends that might predict when and how these ejections occur.
+        </p>
+
+    </section>
+
+</body>
+
+</html>

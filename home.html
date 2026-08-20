@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Chau Truong — Home</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Menu links -->
+    <header>
+        <a href="home.html" class="logo">Chau Truong</a>
+        <nav>
+            <a href="home.html" class="active">Home</a>
+            <a href="research.html" class="active">Research</a>
+            <a href="animations.html" class="active">Animations</a>
+            <a href="ChauTruong—CV.pdf" class="active" target="_blank">CV</a>
+            <a href="https://github.com/chautruo15" class="active" target="_blank">GitHub</a>
+        </nav>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            ☰
+        </div>
+    </header>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1050) {
+                nav.classList.remove('active'); // Remove 'active' class if screen width exceeds 1050px
+            }
+        });
+    </script>
+
+    <!-- About Me -->
+    <section id="home" class="home">
+
+        <div class="home-img">
+            <img src="photo.jpg" alt="" style="width: 450px; height: auto;">
+        </div>
+
+        <div class="home-content">
+
+            <h2>About Me</h2>
+
+            <p>
+                Hi! I'm Chau Truong, a second-year Physics PhD student at 
+                <a href="https://physics.wfu.edu/" class="active" style="color: #64B5F6" target="_blank">Wake Forest University</a> 
+                advised by 
+                <a href="https://www.cardenas.sites.wfu.edu/" class="active" style="color: #64B5F6" target="_blank">Professor Alejandro Cárdenas-Avendaño</a>. 
+                My research interests are in black holes and gravitational waves, specifically how 
+                gravitational wave signals can help us learn more about the black holes that emit them.
+            </p>
+
+            <p>
+                I received my A.B. in Physics, complimented by a minor in Computer Science, 
+                from 
+                <a href="https://phy.princeton.edu/" class="active" style="color: #64B5F6" target="_blank">Princeton University</a> 
+                in 2025, where I was a 
+                <a href="https://www.questbridge.org/" class="active" style="color: #64B5F6" target="_blank">QuestBridge Scholar</a>. 
+                I am also a member of the 
+                <a href="https://simonscbhsg.com/" class="active" style="color: #64B5F6" target="_blank">Simons Collaboration on Black Holes and Strong Gravity</a>.
+            </p>
+
+            <p class="email"><b>Email:</b> <a href="mailto:truoc25@wfu.edu" style="color: #64B5F6">truoc25@wfu.edu</a></p>
+
+        </div>
+
+    </section>   
+
+</body>
+
+</html>

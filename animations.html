@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Chau Truong — Home</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Menu links -->
+    <header>
+        <a href="home.html" class="logo">Chau Truong</a>
+        <nav>
+            <a href="home.html" class="active">Home</a>
+            <a href="research.html" class="active">Research</a>
+            <a href="animations.html" class="active">Animations</a>
+            <a href="ChauTruong—CV.pdf" class="active" target="_blank">CV</a>
+            <a href="https://github.com/chautruo15" class="active" target="_blank">GitHub</a>
+        </nav>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            ☰
+        </div>
+    </header>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1050) {
+                nav.classList.remove('active'); // Remove 'active' class if screen width exceeds 1050px
+            }
+        });
+    </script>
+
+    <!-- Animations -->
+    <section id="animations" class="animations">
+
+        <h2>Animations</h2>
+
+        <p>
+            The following animations showcase the inspiral orbits and 
+            gravitational waveforms of EMRI systems that I produced during 
+            my summer research internship at the Princeton Gravity Initiative from June 
+            to July 2024. In developing these, I implemented the numerical 
+            kludge method to simulate the inspiral and calculate the waveform, 
+            which I then sonified to reflect the frequency evolution over time. 
+            These animations combine a visual representation of the orbit and 
+            the corresponding sound, offering an engaging perspective on the 
+            dynamics of EMRI systems.
+        </p>
+    
+        <!-- MP4s -->
+        <div class="video-container">
+            <video controls>
+                <source src="./geodesics-two-panel.mp4" type="video/mp4">
+            </video>
+            <p>
+                This animation illustrates an example of a geodesic path, 
+                representing the trajectory of a test particle orbiting a 
+                10<sup>6</sup> M<sub>&#x2609;</sub> supermassive black hole 
+                (SMBH) without any external forces.
+            </p>
+        </div>
+    
+        <div class="video-container">
+            <video controls>
+                <source src="./inspiral-two-panel.mp4" type="video/mp4">
+            </video>
+            <p>
+                This animation shows the inspiral orbit of an EMRI system with 
+                a mass ratio of 1:100 and a SMBH spin of 30%, after taking into 
+                account the effects of radiation reaction.
+            </p>
+        </div>
+    
+        <div class="video-container">
+            <video controls>
+                <source src="./inspiral-waveform-animation-sound-e0.0-p20.0-iota1.57-v2.mp4" type="video/mp4">
+            </video>
+            <p>
+                This animation depicts the inspiral orbit and waveform of an 
+                EMRI system with a mass ratio of 1:100 and a SMBH spin of 30% 
+                with orbital parameters eccentricity <i>e = 0.0</i>, semilatus <i>p = 20.0</i>, 
+                and inclination angle <i>&iota; = &pi; / 2</i>, accompanied by sound that 
+                reflects the waveform’s frequency evolution.
+            </p>
+        </div>
+    
+        <div class="video-container">
+            <video controls>
+                <source src="./inspiral-waveform-animation-sound-e0.7-p5.0-iota1.57-v2.mp4" type="video/mp4">
+            </video>
+            <p>
+                This animation depicts the inspiral orbit and waveform of an 
+                EMRI system with a mass ratio of 1:100 and a SMBH spin of 30% 
+                with orbital parameters <i>e = 0.7</i>, <i>p = 5.0</i>, and 
+                <i>&iota; = &pi; / 2</i>, accompanied by sound that reflects the 
+                waveform’s frequency evolution. Due to the more eccentric 
+                orbit of this system, the waveform shows sharp pulses at 
+                each pericenter passage, producing a distinct “spiking” 
+                effect in the audio.
+            </p>
+        </div>
+
+    </section>    
+
+</body>
+
+</html>

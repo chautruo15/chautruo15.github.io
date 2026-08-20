@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{
     border: none;
     box-sizing: border-box;
-    font-family: 'PT Serif';
+    font-family: 'Inter';
     margin: 0;
     outline: none;
     padding: 0;
@@ -30,15 +30,17 @@ header{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 2rem 9%;
+    padding: 2.5rem 9%;
     z-index: 100;
+    border-bottom: 0.5px solid gray;
 }
 
+/* Name */
 .logo{
     color: white;
     cursor: pointer;
     font-size: 4rem;
-    font-weight: 1000;
+    font-weight: 750;
     transition: 0.5s ease;
 }
 
@@ -46,22 +48,23 @@ header{
     transform: scale(1.1);
 }
 
+/* Menu options */
 nav a {
     border-bottom: 3px solid transparent; 
     color: white;
     display: inline-block;
-    font-size: 2rem;
+    font-size: 2.25rem;
     font-weight: 550;
     margin-left: 4rem;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover {
-    border-bottom: 3px solid #87b2d3;
-    color: #87b2d3;
+    border-bottom: 3px solid white;
     transform: scale(1.1);
 }
 
+/* Menu */
 .menu-toggle {
     color: white;
     cursor: pointer;
@@ -78,6 +81,7 @@ nav a:hover {
     transform: scale(1.1);
 }
 
+/* Smaller screen */
 @media (max-width: 1050px) {
     .menu-toggle {
         cursor: pointer;
@@ -119,16 +123,18 @@ nav a:hover {
     }
 
     nav a:hover {
-        color: #87b2d3;
+        border-bottom: 3px solid white;
+        transform: scale(1.1);
     }
 }
 
 section{
     min-height: 100vh;
     padding: 5rem 9% 5rem;
-    padding-top: 10rem;
+    padding-top: 13rem;
 }
 
+/* Home */
 .home{
     align-items: center;
     background-color: black;
@@ -137,31 +143,32 @@ section{
     justify-content: center;
 }
 
-.home .home-content h1{
-    font-size: 6rem;
-    font-weight: 700;
+/* About Me heading */
+.home-content h2{
+    color: white;
+    font-size: 4rem;
     line-height: 1.3;
+    margin-bottom: 2rem;
+    text-align: left; 
 }
 
-span{
-    color: #87b2d3;
-}
-
-.home-content h3{
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
+/* About Me content */
 .home-content p{
-    font-size: 1.75rem;
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
 }
 
+/* About Me email */
 .home-content .email {
-    font-size: 1.75rem;
-    margin-top: 1.5rem;
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
 }
 
+.home-content a:hover {
+    border-bottom: 1.5px solid #64B5F6;
+}
+
+/* Photo */
 .home-img{
     border-radius: 50%;
 }
@@ -169,7 +176,6 @@ span{
 .home-img img{
     position: relative;
     width: 32vw;
-    border-radius: 3%;
     transition: 0.2s linear;
 }
 
@@ -178,25 +184,29 @@ span{
         align-items: center;
         flex-direction: column;
     }
+    .home-content h2{
+        text-align: center;
+    }
     .home-content {
         order: 1;
-        margin-top: 5rem;
-        text-align: center;
+        margin-top: 1rem;
+        text-align: left;
     }
     .home-img {
         order: 2;
     }
 }
 
+/* Research */
 .research {
-    /* align-items: center; */
     background-color: black;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     text-align: left; 
 }
 
+/* Research heading */
 .research h2 {
     color: white;
     font-size: 4rem;
@@ -205,22 +215,23 @@ span{
     text-align: center; 
 }
 
+/* Research content */
 .research p {
-    font-size: 2rem;
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
 }
 
-.jp-pdfs {
-    display: flex;
-    font-size: 2rem;
-    gap: 2rem;
-    justify-content: center;
+.research a:hover {
+    border-bottom: 1.5px solid #64B5F6;
 }
 
+/* Animations */
 .animations {
     background-color: black;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
+    text-align: left; 
 }
 
 .animations h2 {
@@ -228,12 +239,12 @@ span{
     font-size: 4rem;
     line-height: 1.3;
     margin-bottom: 1rem;
-    text-align: center;
+    text-align: center; 
 }
 
 .animations p:first-of-type { 
-    font-size: 2rem;
-    text-align: left;
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
 }
 
 .animations .video-container {
@@ -242,7 +253,7 @@ span{
     width: 50%;
     max-width: 100%;
     text-align: center;
-    padding-top: 3rem;
+    padding-top: 2rem;
 }
 
 .animations .video-container video {
@@ -251,9 +262,9 @@ span{
 }
 
 .animations .video-container p {
-    font-size: 2rem;
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
     text-align: center;
-    margin: 0;
 }
 
 @media (max-width: 1300px) {
