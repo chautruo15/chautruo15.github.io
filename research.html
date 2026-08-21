@@ -37,13 +37,15 @@
 
         menuToggle.addEventListener('click', () => {
             nav.classList.toggle('active');
-            // menuToggle.innerHTML = nav.classList.contains('active') ? '✕' : '☰';
+            menuToggle.classList.toggle('is-open');
+            menuToggle.innerHTML = nav.classList.contains('active') ? '✕' : '☰';
         });
 
         window.addEventListener('resize', () => {
             if (window.innerWidth > 1050) {
-                nav.classList.remove('active'); // Remove 'active' class if screen width exceeds 1050px
-                // menuToggle.innerHTML = '☰';
+                nav.classList.remove('active');
+                menuToggle.classList.remove('is-open');
+                menuToggle.innerHTML = '☰';
             }
         });
     </script>
